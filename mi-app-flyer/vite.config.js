@@ -5,4 +5,5 @@ import react from '@vitejs/plugin-react'
 // Forced restart to load missing dependency cache
 export default defineConfig({
   plugins: [react()],
+  base: '/Flyers/',
 })
