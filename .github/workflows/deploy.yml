@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Se ejecuta cada vez que haces push a la rama main
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Necesario para publicar en la rama gh-pages
+      
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          
+      - name: Instalar dependencias
+        working-directory: ./mi-app-flyer
+        run: npm install
+        
+      - name: Compilar aplicación (Build)
+        working-directory: ./mi-app-flyer
+        run: npm run build
+        
+      - name: Desplegar a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mi-app-flyer/dist # La carpeta donde Vite escupe el código final
