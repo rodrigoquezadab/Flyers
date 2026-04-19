@@ -46,11 +46,14 @@ Para manipular o correr el creador de Flyers a futuro:
    npm run dev
    ```
 3. **Publicar/Actualizar en Producción (GitHub Pages):**
+   La web se encuentra desplegada y funcionando públicamente en: `https://rodrigoquezadab.github.io/Flyers/`
+   
+   Para actualizar la versión en el servidor tras realizar cambios, el despliegue se ejecuta de forma **manual** (habiéndose retirado deliberadamente el bot automático de GitHub Actions para evadir configuraciones de restricción). Ejecuta:
    ```bash
    cd mi-app-flyer
    npm run build ; npx -y gh-pages -d dist
    ```
-   *Nota: Este comando agrupa tu código final de Vite en la carpeta `dist` y lo proyecta localmente hacia tu nube en la rama `gh-pages` con tus credenciales seguras.*
+   *Nota: Este comando agrupa tu código final de Vite en la carpeta `dist` y la empuja de manera forzosa bajo tus credenciales locales seguras hacia la rama `gh-pages` en GitHub, actualizando la página instantáneamente.*
 
 ## Próximos pasos / Backlog (Sugerencias a futuro)
 - Permitir multialmacenamiento de imágenes subidas para celdas independientes (drag & drop).
