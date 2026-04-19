@@ -34,8 +34,8 @@ Aplicación web moderna diseñada para la preparación de imágenes destinadas a
 - **Nombramiento Libre:** Un campo de texto directo junto al botón de descarga para decidir el `placeholder` del documento final.
 - **Exportaciones Limpias e Inmaculadas:** Como la App usa instancias duales de Canvas (`offCanvas`), las reglas o marcas dibujadas artificialmente sobre la previsualización no afectan de origen al documento que obtienes, por ende se entrega limpio para llevar a tu impresora.
 
-## Instalación y Desarrollo
-Para abrir y correr el creador de Flyers a futuro:
+## Instalación, Desarrollo y Despliegue
+Para manipular o correr el creador de Flyers a futuro:
 
 1. **Instalación de Dependencias base:**
    ```bash
@@ -45,6 +45,11 @@ Para abrir y correr el creador de Flyers a futuro:
    ```bash
    npm run dev
    ```
+3. **Publicar/Actualizar en Producción (GitHub Pages):**
+   ```bash
+   npm run build ; npx -y gh-pages -d dist
+   ```
+   *Nota: Este comando agrupa tu código final de Vite en la carpeta `dist` y lo proyecta localmente hacia tu nube en la rama `gh-pages` con tus credenciales seguras.*
 
 ## Próximos pasos / Backlog (Sugerencias a futuro)
 - Permitir multialmacenamiento de imágenes subidas para celdas independientes (drag & drop).
