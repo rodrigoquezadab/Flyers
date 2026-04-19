@@ -47,6 +47,7 @@ Para manipular o correr el creador de Flyers a futuro:
    ```
 3. **Publicar/Actualizar en Producción (GitHub Pages):**
    ```bash
+   cd mi-app-flyer
    npm run build ; npx -y gh-pages -d dist
    ```
    *Nota: Este comando agrupa tu código final de Vite en la carpeta `dist` y lo proyecta localmente hacia tu nube en la rama `gh-pages` con tus credenciales seguras.*
